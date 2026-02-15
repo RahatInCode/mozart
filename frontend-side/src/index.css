@@ -1,157 +1,247 @@
-@import "tailwindcss";
-@import '@fontsource/poppins/700.css';
-@import '@fontsource/inter/400.css'; 
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
 
-/* With @tailwindcss/vite, you don't need @tailwind directives */
-/* The plugin automatically processes Tailwind classes */
+/* IMPORTANT: @tailwindcss/vite DOES need these directives */
+@import "tailwindcss";
 
 /* Base Styles */
-@layer base {
-  * {
-    @apply border-neutral-light-gray;
-  }
+* {
+  border-color: #E5E5E5;
+}
 
-  body {
-    @apply font-body text-neutral-gray bg-white antialiased;
-    @apply text-body;
-  }
+body {
+  font-family: 'Inter', sans-serif;
+  color: #6B6B6B;
+  background-color: white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 1rem;
+  line-height: 1.6;
+}
 
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-heading text-neutral-dark;
-  }
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+  color: #2C2C2C;
+}
 
+h1 {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+@media (min-width: 768px) {
   h1 {
-    @apply text-section-mobile md:text-section;
+    font-size: 2.5rem;
   }
+}
 
+h2 {
+  font-size: 1.75rem;
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+@media (min-width: 768px) {
   h2 {
-    @apply text-subsection md:text-section;
+    font-size: 2.5rem;
   }
+}
 
+h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+@media (min-width: 768px) {
   h3 {
-    @apply text-xl md:text-subsection;
-  }
-
-  /* Remove default margins */
-  p, h1, h2, h3, h4, h5, h6 {
-    @apply mb-0;
-  }
-
-  /* Smooth scrolling */
-  html {
-    @apply scroll-smooth;
-  }
-
-  /* Selection color */
-  ::selection {
-    @apply bg-primary-yellow text-white;
+    font-size: 1.75rem;
   }
 }
 
-/* Component Styles */
-@layer components {
-  /* Buttons */
-  .btn {
-    @apply inline-flex items-center justify-center px-6 py-3 rounded-full font-medium transition-all duration-300 cursor-pointer;
-    @apply focus:outline-none focus:ring-2 focus:ring-offset-2;
-  }
+/* Remove default margins */
+p, h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 0;
+}
 
-  .btn-primary {
-    @apply bg-primary-yellow text-neutral-dark hover:bg-primary-yellow-dark;
-    @apply shadow-button hover:shadow-lg hover:scale-105;
-    @apply focus:ring-primary-yellow;
-  }
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
 
-  .btn-secondary {
-    @apply bg-primary-green text-white hover:bg-primary-green-dark;
-    @apply focus:ring-primary-green;
-  }
+/* Selection color */
+::selection {
+  background-color: #FDB515;
+  color: white;
+}
 
-  .btn-outline {
-    @apply border-2 border-neutral-dark text-neutral-dark hover:bg-neutral-dark hover:text-white;
-  }
+/* Button Styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  outline: none;
+}
 
-  .btn-lg {
-    @apply px-8 py-4 text-lg;
-  }
+.btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(253, 181, 21, 0.5);
+}
 
-  .btn-sm {
-    @apply px-4 py-2 text-sm;
-  }
+.btn-primary {
+  background-color: #FDB515;
+  color: #2C2C2C;
+  box-shadow: 0 2px 8px rgba(253, 181, 21, 0.3);
+}
 
-  /* Cards */
-  .card {
-    @apply bg-white rounded-2xl shadow-card transition-all duration-300;
-    @apply hover:shadow-card-hover hover:-translate-y-2;
-  }
+.btn-primary:hover {
+  background-color: #E5A214;
+  box-shadow: 0 4px 12px rgba(253, 181, 21, 0.4);
+  transform: scale(1.05);
+}
 
-  /* Section Containers */
+.btn-secondary {
+  background-color: #2D6F5E;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: #1F4D40;
+}
+
+.btn-outline {
+  border: 2px solid #2C2C2C;
+  color: #2C2C2C;
+  background-color: transparent;
+}
+
+.btn-outline:hover {
+  background-color: #2C2C2C;
+  color: white;
+}
+
+.btn-lg {
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+}
+
+.btn-sm {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+}
+
+/* Card Styles */
+.card {
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  transform: translateY(-0.5rem);
+}
+
+/* Section Containers */
+.section {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+@media (min-width: 768px) {
   .section {
-    @apply py-16 md:py-24;
-  }
-
-  .section-container {
-    @apply container mx-auto px-4;
-  }
-
-  /* Links */
-  .link {
-    @apply text-neutral-gray hover:text-primary-yellow transition-colors duration-300;
-  }
-
-  .link-primary {
-    @apply text-primary-yellow hover:text-primary-yellow-dark font-medium;
-  }
-
-  /* Input Fields */
-  .input {
-    @apply w-full px-4 py-3 rounded-lg border border-neutral-light-gray;
-    @apply focus:outline-none focus:ring-2 focus:ring-primary-yellow focus:border-transparent;
-    @apply transition-all duration-300;
-  }
-
-  /* Decorative shapes */
-  .shape-blob {
-    @apply absolute rounded-full blur-3xl opacity-20;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
   }
 }
 
-/* Utility Styles */
-@layer utilities {
-  /* Text gradients */
-  .text-gradient-yellow {
-    @apply bg-gradient-to-r from-primary-yellow to-accent-orange bg-clip-text text-transparent;
-  }
+.section-container {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
 
-  .text-gradient-green {
-    @apply bg-gradient-to-r from-primary-green to-primary-green-dark bg-clip-text text-transparent;
-  }
+/* Links */
+.link {
+  color: #6B6B6B;
+  transition: color 0.3s ease;
+}
 
-  /* Animations */
-  .animate-on-scroll {
-    @apply opacity-0 translate-y-8;
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-  }
+.link:hover {
+  color: #FDB515;
+}
 
-  .animate-on-scroll.visible {
-    @apply opacity-100 translate-y-0;
-  }
+.link-primary {
+  color: #FDB515;
+  font-weight: 500;
+}
 
-  /* Glass effect */
-  .glass {
-    @apply bg-white/10 backdrop-blur-lg border border-white/20;
-  }
+.link-primary:hover {
+  color: #E5A214;
+}
 
-  /* Aspect ratios */
-  .aspect-product {
-    @apply aspect-[3/4];
-  }
+/* Input Fields */
+.input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #E5E5E5;
+  transition: all 0.3s ease;
+}
 
-  .aspect-blog {
-    @apply aspect-[16/9];
-  }
+.input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(253, 181, 21, 0.5);
+  border-color: transparent;
+}
+
+/* Decorative shapes */
+.shape-blob {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(60px);
+  opacity: 0.2;
+}
+
+/* Text gradients */
+.text-gradient-yellow {
+  background: linear-gradient(to right, #FDB515, #FF6B35);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.text-gradient-green {
+  background: linear-gradient(to right, #2D6F5E, #1F4D40);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Animations */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(2rem);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Glass effect */
+.glass {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /* Custom Scrollbar */
@@ -160,15 +250,16 @@
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-neutral-light-gray;
+  background-color: #E5E5E5;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-primary-yellow rounded-full;
+  background-color: #FDB515;
+  border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-primary-yellow-dark;
+  background-color: #E5A214;
 }
 
 /* Loading Animation */
@@ -185,4 +276,13 @@
   animation: shimmer 2s infinite;
   background: linear-gradient(to right, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
   background-size: 1000px 100%;
+}
+
+/* Aspect ratios */
+.aspect-product {
+  aspect-ratio: 3/4;
+}
+
+.aspect-blog {
+  aspect-ratio: 16/9;
 }
