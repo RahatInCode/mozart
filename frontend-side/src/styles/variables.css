@@ -1,0 +1,13 @@
+
+const colors = {
+  primary: {
+    yellow: '#F5C518',    // CTA buttons, accents
+    green: '#2D5F4F',     // Stats section, trust elements
+    cream: '#FAF7F2',     // Background sections
+  },
+  neutral: {
+    dark: '#2C2C2C',      // Headings
+    gray: '#6B6B6B',      // Body text
+    lightGray: '#E5E5E5', // Borders
+  }
+}
