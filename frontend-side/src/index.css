@@ -1,3 +1,188 @@
 @import "tailwindcss";
 @import '@fontsource/poppins/700.css';
 @import '@fontsource/inter/400.css'; 
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* With @tailwindcss/vite, you don't need @tailwind directives */
+/* The plugin automatically processes Tailwind classes */
+
+/* Base Styles */
+@layer base {
+  * {
+    @apply border-neutral-light-gray;
+  }
+
+  body {
+    @apply font-body text-neutral-gray bg-white antialiased;
+    @apply text-body;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading text-neutral-dark;
+  }
+
+  h1 {
+    @apply text-section-mobile md:text-section;
+  }
+
+  h2 {
+    @apply text-subsection md:text-section;
+  }
+
+  h3 {
+    @apply text-xl md:text-subsection;
+  }
+
+  /* Remove default margins */
+  p, h1, h2, h3, h4, h5, h6 {
+    @apply mb-0;
+  }
+
+  /* Smooth scrolling */
+  html {
+    @apply scroll-smooth;
+  }
+
+  /* Selection color */
+  ::selection {
+    @apply bg-primary-yellow text-white;
+  }
+}
+
+/* Component Styles */
+@layer components {
+  /* Buttons */
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-full font-medium transition-all duration-300 cursor-pointer;
+    @apply focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+
+  .btn-primary {
+    @apply bg-primary-yellow text-neutral-dark hover:bg-primary-yellow-dark;
+    @apply shadow-button hover:shadow-lg hover:scale-105;
+    @apply focus:ring-primary-yellow;
+  }
+
+  .btn-secondary {
+    @apply bg-primary-green text-white hover:bg-primary-green-dark;
+    @apply focus:ring-primary-green;
+  }
+
+  .btn-outline {
+    @apply border-2 border-neutral-dark text-neutral-dark hover:bg-neutral-dark hover:text-white;
+  }
+
+  .btn-lg {
+    @apply px-8 py-4 text-lg;
+  }
+
+  .btn-sm {
+    @apply px-4 py-2 text-sm;
+  }
+
+  /* Cards */
+  .card {
+    @apply bg-white rounded-2xl shadow-card transition-all duration-300;
+    @apply hover:shadow-card-hover hover:-translate-y-2;
+  }
+
+  /* Section Containers */
+  .section {
+    @apply py-16 md:py-24;
+  }
+
+  .section-container {
+    @apply container mx-auto px-4;
+  }
+
+  /* Links */
+  .link {
+    @apply text-neutral-gray hover:text-primary-yellow transition-colors duration-300;
+  }
+
+  .link-primary {
+    @apply text-primary-yellow hover:text-primary-yellow-dark font-medium;
+  }
+
+  /* Input Fields */
+  .input {
+    @apply w-full px-4 py-3 rounded-lg border border-neutral-light-gray;
+    @apply focus:outline-none focus:ring-2 focus:ring-primary-yellow focus:border-transparent;
+    @apply transition-all duration-300;
+  }
+
+  /* Decorative shapes */
+  .shape-blob {
+    @apply absolute rounded-full blur-3xl opacity-20;
+  }
+}
+
+/* Utility Styles */
+@layer utilities {
+  /* Text gradients */
+  .text-gradient-yellow {
+    @apply bg-gradient-to-r from-primary-yellow to-accent-orange bg-clip-text text-transparent;
+  }
+
+  .text-gradient-green {
+    @apply bg-gradient-to-r from-primary-green to-primary-green-dark bg-clip-text text-transparent;
+  }
+
+  /* Animations */
+  .animate-on-scroll {
+    @apply opacity-0 translate-y-8;
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .animate-on-scroll.visible {
+    @apply opacity-100 translate-y-0;
+  }
+
+  /* Glass effect */
+  .glass {
+    @apply bg-white/10 backdrop-blur-lg border border-white/20;
+  }
+
+  /* Aspect ratios */
+  .aspect-product {
+    @apply aspect-[3/4];
+  }
+
+  .aspect-blog {
+    @apply aspect-[16/9];
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-neutral-light-gray;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary-yellow rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary-yellow-dark;
+}
+
+/* Loading Animation */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.loading-shimmer {
+  animation: shimmer 2s infinite;
+  background: linear-gradient(to right, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
+  background-size: 1000px 100%;
+}
