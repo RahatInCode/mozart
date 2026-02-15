@@ -1,5 +1,11 @@
 import React from 'react';
-import { SectionProps } from '../types';
+
+interface SectionProps {
+  children: React.ReactNode;
+  className?: string;
+  id?: string;
+  background?: 'white' | 'cream' | 'green';
+}
 
 const Section: React.FC<SectionProps> = ({
   children,
@@ -7,16 +13,16 @@ const Section: React.FC<SectionProps> = ({
   id,
   background = 'white',
 }) => {
-  const backgroundClasses = {
+  const backgroundStyles = {
     white: 'bg-white',
-    cream: 'bg-primary-cream',
-    green: 'bg-primary-green text-white',
+    cream: 'bg-[#FAF7F2]',
+    green: 'bg-[#2D6F5E] text-white',
   };
 
   return (
     <section
       id={id}
-      className={`section ${backgroundClasses[background]} ${className}`}
+      className={`section ${backgroundStyles[background]} ${className}`}
     >
       <div className="section-container">
         {children}

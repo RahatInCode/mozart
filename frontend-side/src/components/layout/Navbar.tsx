@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { NavLink } from '../types';
-import Button from './Button';
+import type { NavLink } from '../../types/types';
+import Button from '../ui/Button';
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
