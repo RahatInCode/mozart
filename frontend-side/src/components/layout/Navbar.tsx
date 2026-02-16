@@ -101,7 +101,7 @@ const Navbar: React.FC = () => {
 
         {/* Mobile Menu */}
         <div
-          className={`md:hidden fixed inset-0 top-[72px] bg-white transition-transform duration-300 ${
+          className={`md:hidden fixed inset-0 top-18 bg-white transition-transform duration-300 ${
             isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
           }`}
         >
