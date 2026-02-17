@@ -7,8 +7,6 @@ function App() {
     <div className="App">
       <Navbar />
       <HeroSection />
-      
-      {/* Placeholder for future sections */}
       <section id="about" className="section bg-white">
         <div className="section-container">
           <div className="text-center max-w-3xl mx-auto py-20">
