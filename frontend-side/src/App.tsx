@@ -11,7 +11,7 @@ function App() {
         <div className="section-container">
           <div className="text-center max-w-3xl mx-auto py-20">
             <h2 className="text-section font-heading font-bold text-neutral-dark mb-6">
-              More Sections Coming Soon
+              More Sections Coming Soon , have a kitkat
             </h2>
             <p className="text-body-lg text-neutral-gray">
               We'll build the Features, Products, Statistics, Testimonials, 
